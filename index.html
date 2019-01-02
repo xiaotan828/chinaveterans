@@ -5,21 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="assets/img/vChina/favicon.jpg" type="image/x-icon">
-    <title>关注退伍老兵</title>
+	<link rel="icon" href="assets/img/favicon.jpg" type="image/x-icon">
+    <title>退伍老兵需要社会的关注</title>
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/app.css">
     <style>
-        .loader {
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #F5F8FA;
-            z-index: 9998;
-            text-align: center;
-        }
         .plane-container {
             position: absolute;
             top: 50%;
@@ -36,13 +26,6 @@
     </div>
 </div>
 
-<div id="app" class="paper-loading">
-    <!--<div class="btn-fixed-top-left">-->
-        <!--<a href="documentations.html"-->
-           <!--class="btn-fab  btn-primary shadow1">-->
-            <!--<i class="icon icon-clipboard-list"></i>-->
-        <!--</a>-->
-    <!--</div>-->
 <div class="page height-full responsive-phone">
     <div class="content-wrapper">
         <section class="p-b-40 p-t-40 animatedParent animateOnce">
@@ -53,17 +36,15 @@
                             <div class="p-t-b-40">
                           <!--      <img src="assets/img/basic/logo.png" alt="Knowledge"> -->
                             </div>  
-                            <h2 class="fadeInUpShort animated go">内容正在更新!</h2>
-                            <br>
-                            <p class="fadeInUpShort animated go">
-                                预计恢复时间：</p>
-                            <br>
-                            <div class="counter-wrapper counter" data-date="January 1, 2019">
-                                <div><span class="days">2</span> <span class="count-type">days</span></div>
-                                <div><span class="hours">04</span> <span class="count-type">hrs</span></div>
-                                <div><span class="minutes">57</span> <span class="count-type">mins</span></div>
-                                <div><span class="seconds">11</span> <span class="count-type">secs</span></div>
-                            </div>
+                            <h1>内容正在更新!</h1>
+                            <br><br><br>
+                            <h5 color="gray">
+                                预计：</h5>
+                            
+                            <h1 id="counter" class="p-t-b-40">
+                            </h1>
+							<h5 color="gray">
+                                后恢复访问</h5>
                         <!--    <ul class="social">
                                 <li class="linkedin"><a href="#"><i class="icon icon-linkedin"></i></a></li>
                                 <li class="dribbble"><a href="#"><i class="icon icon-dribbble"></i></a></li>
@@ -85,6 +66,22 @@
         </section>
     </div>
 </div>
-
+<script>
+var countDownDate = new Date("Jan 5, 2019 15:37:25").getTime();
+var x = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  document.getElementById("counter").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s "; 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("counter").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
 </body>
 </html>
