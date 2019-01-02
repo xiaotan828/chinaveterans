@@ -41,8 +41,8 @@
                             <h5 color="gray">
                                 预计：</h5>
                             
-                            <h1 id="counter" class="p-t-b-40">
-                            </h1>
+                            <h2 id="counter" class="p-t-b-40">
+                            </h2>
 							<h5 color="gray">
                                 后恢复访问</h5>
                         <!--    <ul class="social">
@@ -75,8 +75,8 @@ var x = setInterval(function() {
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  document.getElementById("counter").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s "; 
+  document.getElementById("counter").innerHTML = days + "天 " + hours + "时 "
+  + minutes + "分 " + seconds + "秒 "; 
   if (distance < 0) {
     clearInterval(x);
     document.getElementById("counter").innerHTML = "EXPIRED";
